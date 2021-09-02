@@ -1,43 +1,66 @@
+/** 
+ * Date: 2021-09-01
+ * File Name: ISBN.java
+ * Author: Viktor Ödman
+ */
 package vo222dq_assign1;
 
 import java.util.Scanner;
 
+/**
+ * Class Description: This class represents an ISBN number generator
+ * 
+ * @version 1.0
+ * @author Viktor Ödman
+ */
 public class ISBN {
-    private final int ISBN_CHECKSUM = 10; 
 
+    /** 
+     * Prompts the user to enter 9 out of the 10 digits in an ISBN-10 number,
+     * and calculates and presents the 10th digit. 
+     * 
+     */
     public void calculateISBNNumber() {
-        String userISBNNumbers = getUserISBNNumbers();
-        String ISBNChecksum = getLastISBNNumber(userISBNNumbers);
-        
-        System.out.println("Your ISBN number is: " + userISBNNumbers + ISBNChecksum);
-    }
+        int userISBNNumbers = promptUserInput();
+        String formattedISBNNumbers = formatISBNNumber(userISBNNumbers);
+        String lastISBNNumber = getISBNChecksum(formattedISBNNumbers);
 
-    private String getLastISBNNumber(String userISBNNumbers) {
-        String[] ISBNArray = userISBNNumbers.split("");
         
+        System.out.println("Your ISBN number is: " + userISBNNumbers + lastISBNNumber);
+    }
+    /** 
+     * Calculates the 10nth digit(the checksum) of the ISBN number.
+     * 
+     * @param userISBNNumbers The 9 first numbers of an ISBN-10 number.
+     * @return The 10nth number/character of an ISBN-10 number.
+     */
+    private String getISBNChecksum(String userISBNNumbers) {
         int sum = 0;
 
-        for(int i = 0; i < ISBNArray.length; i++) {
-            sum += Integer.parseInt(ISBNArray[i]) * (i+1);
+        for(int i = 0; i < userISBNNumbers.length(); i++) {
+            sum += Character.getNumericValue(userISBNNumbers.charAt(i)) * (i+1);
         }
 
-        int remainder = sum % 11;
-
-        return remainder == ISBN_CHECKSUM ? "X": String.valueOf(remainder);
+        return sum % 11 == 10 ? "X": String.valueOf(sum % 11);
     }
 
-    private String getUserISBNNumbers() {
-        int userInput = promptUserInput();
-
-        return formatISBNNumber(userInput);
-    }
-
+    /** 
+     * Prompts the user to enter the first 9 numbers of an ISBN-10 number.
+     * 
+     * @return The numbers that the user entered.
+     */
     private int promptUserInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the first 9 ISBN-numbers: ");
         return scanner.nextInt();
     }
 
+    /**
+     * Converts a number to a string and adds leading 0's until the string contains 9 digits.
+     *  
+     * @param ISBNnumber 
+     * @return The converted string
+     */
     private String formatISBNNumber(int ISBNnumber) {
         return String.format("%09d", ISBNnumber);
     }
