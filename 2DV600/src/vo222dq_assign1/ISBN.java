@@ -58,7 +58,7 @@ public class ISBN {
     /**
      * Converts a number to a string and adds leading 0's until the string contains 9 digits.
      *  
-     * @param ISBNnumber 
+     * @param ISBNnumber An number containing up to 9 digits
      * @return The converted string
      */
     private String formatISBNNumber(int ISBNnumber) {
