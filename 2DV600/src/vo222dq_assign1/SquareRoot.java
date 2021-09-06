@@ -20,7 +20,7 @@ public class SquareRoot {
      * Starts the Square Root estimations of the provided number.
      *  
      */
-    public void startEstimation() {
+    public void estimateSquareRoot() {
         double number = promptUserInput();
         double initialGuess = number / 2d;
         double finalGuess = squareRootEstimation(initialGuess, number);
