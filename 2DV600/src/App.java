@@ -1,5 +1,6 @@
 import vo222dq_assign1.Anagram;
 import vo222dq_assign1.ArmstrongNumber;
+import vo222dq_assign1.Codestrip;
 import vo222dq_assign1.ISBN;
 import vo222dq_assign1.SquareRoot;
 import vo222dq_assign1.TextProcessor;
@@ -14,7 +15,9 @@ public class App {
         squareRoot.estimateSquareRoot(); */
         /* TextProcessor textProcessor = new TextProcessor();
         textProcessor.processSentence(); */
-        Anagram anagram = new Anagram();
-        anagram.checkForAnagrams();
+        /* Anagram anagram = new Anagram();
+        anagram.checkForAnagrams(); */
+        Codestrip codestrip = new Codestrip();
+        codestrip.stripCode();
     }
 }
