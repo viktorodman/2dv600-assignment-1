@@ -3,6 +3,7 @@ import vo222dq_assign1.Anagram;
 import vo222dq_assign1.ArmstrongNumber;
 import vo222dq_assign1.Codestrip;
 import vo222dq_assign1.ISBN;
+import vo222dq_assign1.InvoiceTest;
 import vo222dq_assign1.Point;
 import vo222dq_assign1.SquareRoot;
 import vo222dq_assign1.TextProcessor;
@@ -21,7 +22,9 @@ public class App {
         anagram.checkForAnagrams(); */
         /* Codestrip codestrip = new Codestrip();
         codestrip.stripCode(); */
-        pointStarter();
+        /* pointStarter(); */
+        InvoiceTest invoiceTest = new InvoiceTest();
+        invoiceTest.testInvoice();
     }
 
     private static void pointStarter() {
