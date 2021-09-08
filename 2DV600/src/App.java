@@ -7,6 +7,7 @@ import vo222dq_assign1.InvoiceTest;
 import vo222dq_assign1.Point;
 import vo222dq_assign1.SquareRoot;
 import vo222dq_assign1.TextProcessor;
+import vo222dq_assign1.Time;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -23,8 +24,15 @@ public class App {
         /* Codestrip codestrip = new Codestrip();
         codestrip.stripCode(); */
         /* pointStarter(); */
-        InvoiceTest invoiceTest = new InvoiceTest();
-        invoiceTest.testInvoice();
+        /* InvoiceTest invoiceTest = new InvoiceTest();
+        invoiceTest.testInvoice(); */
+        Time t1 = new Time(1, 3, 1);
+        Time t2 = new Time(2, 0, 0);
+
+        Time t3 = t1.subtractTime(t2);
+
+        System.out.println(t1);
+
     }
 
     private static void pointStarter() {
