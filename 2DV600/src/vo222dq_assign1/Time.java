@@ -13,6 +13,10 @@ package vo222dq_assign1;
  * @author Viktor Ödman
  */
 public class Time {
+    private final int SECONDS_IN_A_DAY = 86400;
+    private final int SECONDS_IN_A_HOUR = 3600;
+    private final int SECONDS_IN_A_MINUTE = 60;
+
     private int hours;
     private int minutes;
     private int seconds;
@@ -120,13 +124,17 @@ public class Time {
      * @param timeInSeconds Time in seconds
      */
     public void setClock(int timeInSeconds) {
-        int totalHours = timeInSeconds / 3600;
-        int seconds = timeInSeconds - (totalHours * 3600);
-        int minutes = seconds / 60;
-
-        this.setHours(totalHours);
-        this.setMinutes(minutes);
-        this.setSeconds(seconds - (minutes * 60));
+        if (timeInSeconds >= SECONDS_IN_A_DAY) {
+            setClock(timeInSeconds - SECONDS_IN_A_DAY);
+        } else {
+            int totalHours = timeInSeconds / SECONDS_IN_A_HOUR;
+            int seconds = timeInSeconds - (totalHours * SECONDS_IN_A_HOUR);
+            int minutes = seconds / SECONDS_IN_A_MINUTE;
+    
+            this.setHours(totalHours);
+            this.setMinutes(minutes);
+            this.setSeconds(seconds - (minutes * SECONDS_IN_A_MINUTE));
+        }
     }
 
     /**
@@ -208,6 +216,6 @@ public class Time {
      * @return the passed time in hours, minutes and seconds, in seconds.
      */
     private int totalTimeInSeconds(int hours, int minutes, int seconds) {
-        return (hours * 3600) + (minutes * 60) + seconds;
+        return (hours * SECONDS_IN_A_HOUR) + (minutes * SECONDS_IN_A_MINUTE) + seconds;
     }
 }
