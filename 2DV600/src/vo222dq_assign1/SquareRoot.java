@@ -76,6 +76,8 @@ public class SquareRoot {
         Scanner scanner = new Scanner(System.in);
         System.out.println("This program estimate square roots.");
         System.out.print("Enter an integer to estimate the square root of: ");
-        return scanner.nextInt();
+        int userInput = scanner.nextInt();
+        scanner.close();
+        return userInput;
     }
 }

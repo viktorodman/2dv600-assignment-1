@@ -52,7 +52,9 @@ public class ISBN {
     private int promptUserInput() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the first 9 ISBN-numbers: ");
-        return scanner.nextInt();
+        int userInput = scanner.nextInt();
+        scanner.close();
+        return userInput;
     }
 
     /**

@@ -43,7 +43,7 @@ public class TextProcessor {
      * @return The transformed sentence.
      */
     private String transformSentence(String originalSentence) {
-        String newSentence = "";
+        StringBuilder newSentence = new StringBuilder();
 
         for (int i = 0; i < originalSentence.length(); i++) {
             char currentChar = originalSentence.charAt(i);
@@ -55,13 +55,13 @@ public class TextProcessor {
                     replacedChar = Character.toUpperCase(replacedChar);
                 }
 
-                newSentence += replacedChar;
+                newSentence.append(replacedChar);
             } else {
-                newSentence += currentChar;
+                newSentence.append(currentChar);
             }
         }
 
-        return newSentence;
+        return newSentence.toString();
     }
 
     /**

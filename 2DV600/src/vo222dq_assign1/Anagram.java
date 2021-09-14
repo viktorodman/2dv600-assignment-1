@@ -42,7 +42,6 @@ public class Anagram {
             System.err.println("IO Exception");
             e.printStackTrace();
         }
-        
     }
 
     /**
@@ -51,11 +50,11 @@ public class Anagram {
      * @param anagramList A list of the found anagrams
      */
     private void presentResults(List<String> anagramList) {
-        String presentationString = "";
+        StringBuilder presentationString = new StringBuilder();
         for (int i = 0; i < anagramList.size(); i++) {
-            presentationString += anagramList.get(i);
+            presentationString.append(anagramList.get(i));
             if (i < anagramList.size() - 1) {
-                presentationString += ", ";
+                presentationString.append(", ");
             }
         }
         System.out.print(presentationString);

@@ -1,17 +1,20 @@
-import java.util.ArrayList;
+/** 
+ * Date: 2021-09-01
+ * File Name: App.java
+ * Author: Viktor Ödman
+ */
 
-import jdk.incubator.vector.VectorOperators.Test;
 import vo222dq_assign1.Anagram;
 import vo222dq_assign1.ArmstrongNumber;
-import vo222dq_assign1.Arrays;
 import vo222dq_assign1.Codestrip;
 import vo222dq_assign1.ISBN;
 import vo222dq_assign1.InvoiceTest;
 import vo222dq_assign1.Point;
 import vo222dq_assign1.SquareRoot;
 import vo222dq_assign1.TextProcessor;
-import vo222dq_assign1.Time;
-
+/**
+ * Starting point of the application.
+ */
 public class App {
     public static void main(String[] args) throws Exception {
         //demoISBN(); // Uncomment to demo ISBN

@@ -23,14 +23,14 @@ public class ArraysMain {
     private static int[] subStringSuccess = { 3, 4, 5 };
     private static int[] subStringFail = { 3, 4, 6 };
     public static void main(String[] args) {
-       /*  demoAverage();
+        demoAverage();
         demoMax();
         demoAdn();
         demoReplaceAll();
         demoReverse();
         demoSort();
         demoSubstring();
-        demoAbsDif(); */
+        demoAbsDif();
     }
 
     /**
@@ -65,12 +65,12 @@ public class ArraysMain {
     private static void demoReplaceAll() {
         System.out.println(
             "Array before replace all: " + 
-            java.util.Arrays.toString(changedArray)
+            Arrays.arrayToString(changedArray)
         );
         Arrays.replaceAll(changedArray, oldValue, newValue);
         System.out.println(
             "Array after replace all: " + 
-            java.util.Arrays.toString(changedArray) + "\n"
+            Arrays.arrayToString(changedArray) + "\n"
         );
     }
 
@@ -120,9 +120,9 @@ public class ArraysMain {
             
             System.out.println(
                 "\nArray representation for the difference between first and second array " + "\n" +
-                "First Array: " + java.util.Arrays.toString(unchangedArray) + "\n" +
-                "Second Array: " + java.util.Arrays.toString(unchangedArrayForSort) + "\n" +
-                "Difference Array: " + java.util.Arrays.toString(absSuccess) + "\n"
+                "First Array: " + Arrays.arrayToString(unchangedArray) + "\n" +
+                "Second Array: " + Arrays.arrayToString(unchangedArrayForSort) + "\n" +
+                "Difference Array: " + Arrays.arrayToString(absSuccess) + "\n"
             );
 
             // Version that should throw an error
@@ -145,8 +145,8 @@ public class ArraysMain {
     private static void printSubstringResult(int[] arr, int[] subString, boolean isSubString, String message) {
         System.out.println(
             "\n" + message + "\n" +
-            "Array: " + java.util.Arrays.toString(arr) + "\n" +
-            "Sub String: " + java.util.Arrays.toString(subString) + "\n" +
+            "Array: " + Arrays.arrayToString(arr) + "\n" +
+            "Sub String: " + Arrays.arrayToString(subString) + "\n" +
             "isSubString?: " + isSubString + "\n"
         );
     }
@@ -154,15 +154,15 @@ public class ArraysMain {
     private static void printArrayResults(int[] original, int[] changed, String message) {
         System.out.println(
             "\nResult for : " + message + "\n" +
-            "Original Array: " + java.util.Arrays.toString(original) + "\n" +
-            "Changed Array: " + java.util.Arrays.toString(changed) + "\n"
+            "Original Array: " + Arrays.arrayToString(original) + "\n" +
+            "Changed Array: " + Arrays.arrayToString(changed) + "\n"
         );
     }
 
     private static void printIntResults(int[] original, int changed, String message) {
         System.out.println(
             "\nResult for : " + message + "\n" +
-            "Original Array: " + java.util.Arrays.toString(original) + "\n" +
+            "Original Array: " + Arrays.arrayToString(original) + "\n" +
             "Result: " + changed + "\n"
         );
     }

@@ -49,7 +49,7 @@ public class Codestrip {
         int blankLines = 0;
         int comments = 0;
         boolean commentHasStarted = false;
-        String newString = "";
+        StringBuilder newString = new StringBuilder();
         String lineFromFile = "";
 
         lineFromFile = bufferedReader.readLine();
@@ -69,13 +69,13 @@ public class Codestrip {
             } else if(isMultiLineComment(trimmedLine)) {
                 commentHasStarted = true;
             } else {
-                newString+=lineFromFile + "\n";
+                newString.append(lineFromFile + "\n");
                 linesOfCode++;
             }
             
             lineFromFile = bufferedReader.readLine();
         }
-        printResults(linesOfCode, blankLines, comments, newString);
+        printResults(linesOfCode, blankLines, comments, newString.toString());
     }
 
     /**

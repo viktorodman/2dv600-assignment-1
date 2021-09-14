@@ -126,7 +126,7 @@ public class Arrays {
        /**
         * Creates segements of arr which are the same length as sub
         * and checks if the segment is equal to the sub. 
-        * Breaks if more segment are not possible
+        * Breaks if more segments are not possible
         * 
         * Example [1,2,3,4,5]
         * The segments are [1,2,3][2,3,4][3,4,5]
@@ -142,11 +142,11 @@ public class Arrays {
                 segmentArr[j] = arr[i+j];
             }
 
-            if(arraysAreEqual(segmentArr, sub)) {
+            if(arraysIsEqual(segmentArr, sub)) {
                 isSub = true;
             }
         }
-
+        
         return isSub;
     }
 
@@ -176,19 +176,33 @@ public class Arrays {
         return newArr;
     }
 
-    private static boolean arraysAreEqual(int[] arr1, int[] arr2) {
-        boolean areEqual = true;
+    private static boolean arraysIsEqual(int[] arr1, int[] arr2) {
+        boolean isEqual = true;
 
         if(arr1.length != arr2.length) {
-            areEqual = false;
+            isEqual = false;
         }
 
         for (int i = 0; i < arr2.length; i++) {
             if (arr1[i] != arr2[i]) {
-                areEqual = false;
+                isEqual = false;
             }
         }
 
-        return areEqual;
+        return isEqual;
+    }
+
+    public static String arrayToString(int[] arr) {
+        StringBuilder sBuilder = new StringBuilder("[");
+        String separator = ", ";
+        for (int i = 0; i < arr.length; i++) {
+            sBuilder.append(arr[i]);
+            if (i < arr.length - 1) {
+                sBuilder.append(separator);
+            }
+        }
+        sBuilder.append("]");
+
+        return sBuilder.toString();
     }
 }
